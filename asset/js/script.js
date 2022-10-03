@@ -2,6 +2,14 @@ const postTemp = document.getElementById('post')
 const posts = document.querySelector('.posts')
 const btnFetch = document.querySelector('.btn-fetch')
 const btnAdd = document.querySelector('.btn-add')
+const descEl = document.getElementById('description')
+
+descEl.addEventListener('keypress', (evnt) => {
+    if (evnt.key == 'Enter') {
+        btnAdd.click()
+    }
+})
+
 btnAdd.addEventListener('click', () => {
     const titleEl = document.getElementById('title')
     const descEl = document.getElementById('description')
@@ -12,6 +20,10 @@ btnAdd.addEventListener('click', () => {
     postEl.querySelector('.post-description').innerText = descEl.value
     posts.insertAdjacentElement('beforeEnd', postEl)
     postEl.scrollIntoView()
+
+    //clear inputs
+    titleEl.value = ''
+    descEl.value = ''
 })
 
 posts.addEventListener('click', (evnt) => {
