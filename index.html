@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/styles/styles.css">
+    <script src="./asset/js/script.js" defer></script>
+    <title>Blog Posts</title>
+</head>
+
+<body>
+    <main class="main">
+        <template id="post">
+            <div class="card post">
+                <h2 class="post-title">title</h2>
+                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+                    deleniti. Odio hic in nemo?</p>
+                <button class="btn btn-delete">Delete</button>
+            </div>
+        </template>
+        <div class="card addPost">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Enter title">
+            <label for="description">Description</label>
+            <textarea name="textarea" id="description" cols="30" rows="10"
+                placeholder="Post description goes here..."></textarea>
+            <Button class="btn btn-add">Add</Button>
+        </div>
+        <div class="card posts-related">
+            <button class="btn btn-fetch">Fetch posts</button>
+            <div class="posts">
+                <!-- posts -->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
