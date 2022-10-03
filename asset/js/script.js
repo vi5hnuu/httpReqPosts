@@ -35,6 +35,7 @@ posts.addEventListener('click', (evnt) => {
 })
 
 
+
 btnFetch.addEventListener('click', () => {
     posts.innerHTML = ''
 
