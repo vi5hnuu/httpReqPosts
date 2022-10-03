@@ -36,11 +36,13 @@ posts.addEventListener('click', (evnt) => {
 
 btnFetch.addEventListener('click', () => {
     posts.innerHTML = ''
+    document.querySelector('.spinner').classList.remove('hidden')
     const xhr = new XMLHttpRequest()
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', async = true)
 
 
     xhr.addEventListener('load', (evnt) => {
+        document.querySelector('.spinner').classList.add('hidden')
         const postsData = JSON.parse(xhr.response);
         // console.log(postsData);
         postsData.forEach(postDt => {
