@@ -44,7 +44,14 @@ function getResponseData() {
 
         xhr.addEventListener('load', (evnt) => {
             document.querySelector('.spinner').classList.add('hidden')
-            resolve(xhr.response);
+            if (xhr.status >= 200 && xhr.status < 300)
+                resolve(xhr.response);
+            else
+                reject(xhr.response)
+        })
+        xhr.addEventListener('error', (evnt) => {
+            document.querySelector('.spinner').classList.add('hidden')
+            reject(xhr.response);
         })
         xhr.send()
     })
@@ -54,7 +61,13 @@ btnFetch.addEventListener('click', async (evnt) => {
     posts.innerHTML = ''
     evnt.target.disabled = true
     document.querySelector('.spinner').classList.remove('hidden')
-    const data = await getResponseData()
+    let data;
+    try {
+        data = await getResponseData()
+    } catch (error) {
+        console.error('error');
+        return
+    }
     const postsData = JSON.parse(data)
     postsData.forEach(postDt => {
         const postEl = document.importNode(postTemp.content, true).firstElementChild
