@@ -9,7 +9,7 @@ btnAdd.addEventListener('click', () => {
 
 
     postEl.querySelector('.post-title').innerText = titleEl.value
-    postEl.querySelector('.post-description').innerHtml = descEl.value
+    postEl.querySelector('.post-description').innerText = descEl.value
     posts.insertAdjacentElement('beforeEnd', postEl)
     postEl.scrollIntoView()
 })
@@ -38,7 +38,7 @@ btnFetch.addEventListener('click', () => {
             // console.dir(postEl.querySelector('.post-title'));
 
             postEl.querySelector('.post-title').innerText = postDt['title']
-            postEl.querySelector('.post-description').innerHtml = postDt['body']
+            postEl.querySelector('.post-description').innerText = postDt['body']
             posts.insertAdjacentElement('beforeEnd', postEl)
         });
     })

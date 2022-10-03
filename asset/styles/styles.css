@@ -35,7 +35,7 @@ body {
   flex-direction: column;
   padding: 1rem;
   border-radius: 5px;
-  height: 30%;
+  height: 48%;
 }
 #description {
   resize: none;
@@ -64,12 +64,12 @@ textarea:focus {
 
 .posts-related {
   background-color: #d2daff;
-  height: 60%;
+  height: 48%;
   padding: 1rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 .posts {
   flex-grow: 1;
@@ -83,10 +83,10 @@ textarea:focus {
 .post {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 1rem;
   border-radius: 5px;
   background-color: #b1b2ff;
-  max-height: 50%;
   gap: 1rem;
   margin-bottom: 1rem;
   transition: all 1s;
@@ -95,14 +95,17 @@ textarea:focus {
   transform: scale(1.01);
 }
 .post-title {
+  padding: 0.5rem 0;
   font-family: monospace;
   text-transform: uppercase;
+  overflow: hidden;
 }
 .post-description {
+  max-height: 70%;
   font-size: 1.5rem;
-  flex-grow: 1;
   overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  resize: none;
 }
 
 .btn {
@@ -127,7 +130,6 @@ textarea:focus {
 }
 .btn-delete {
   padding: 0.5rem 1.5rem;
-
   background-color: #f7a9a4;
   align-self: flex-start;
 }
@@ -145,4 +147,15 @@ textarea:focus {
 
 .btn-add:hover {
   background-color: #3aa4fc;
+}
+
+@media (max-width: 650px) {
+  .btn-fetch,
+  .btn-add {
+    padding: 0.5rem 2rem;
+  }
+}
+@media (max-height: 550px) {
+  .addPost {
+  }
 }
